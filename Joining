@@ -1,0 +1,82 @@
+@prefix : <http://www.semanticweb.org/joining#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://www.semanticweb.org/joining> .
+
+<http://www.semanticweb.org/joining> rdf:type owl:Ontology ;
+                                    owl:imports <https://purl.industrialontologies.org/ontology/core/20220506/Core/> .
+
+###  Classes
+:JoiningProcess rdf:type owl:Class ;
+                skos:definition "A Joining Process is a Manufacturing Process that results exclusively in the creation of Joints."@en .
+
+:Joint rdf:type owl:Class ;
+       skos:definition "A Joint is a Fiat Object Part that functions to connect components within Mechanical Assemblies exclusively."@en .
+
+:MechanicalAssembly rdf:type owl:Class ;
+                    skos:definition "A Mechanical Assembly is an Assembly that incorporates at least one Joint as a connecting component."@en .
+
+###  Object Properties
+:IsConnectorOf rdf:type owl:ObjectProperty .
+:hasAgentAsParticipant rdf:type owl:ObjectProperty .
+:hasConnector rdf:type owl:ObjectProperty .
+:hasInstrumentAsParticipant rdf:type owl:ObjectProperty .
+:hasPatientAsParticipant rdf:type owl:ObjectProperty .
+:participatesAsAgent rdf:type owl:ObjectProperty .
+:participatesAsInstrument rdf:type owl:ObjectProperty .
+:participatesAsPatient rdf:type owl:ObjectProperty .
+
+###  Class Definitions
+:JoiningProcess owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf (:ManufacturingProcess
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :hasSpecifiedOutput ;
+                                                             owl:allValuesFrom :Joint
+                                                           ]
+                                                          )
+                                     ] .
+
+:Joint owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:intersectionOf ([ rdf:type owl:Restriction ;
+                                                   owl:onProperty :IsConnectorOf ;
+                                                   owl:someValuesFrom :MechanicalAssembly
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :IsConnectorOf ;
+                                                   owl:allValuesFrom :MechanicalAssembly
+                                                 ]
+                                                )
+                           ] .
+
+:MechanicalAssembly owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasConnector ;
+                                          owl:someValuesFrom :Joint
+                                        ] .
+
+###  SubClass Definitions
+:Joint rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000024> .
+:MechanicalAssembly rdfs:subClassOf <https://purl.industrialontologies.org/ontology/core/Core/Assembly> .
+
+###  SubProperty Definitions
+:IsConnectorOf rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000137> .
+:hasAgentAsParticipant rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000167> .
+:hasConnector rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000111> .
+:hasInstrumentAsParticipant rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000167> .
+:hasPatientAsParticipant rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000167> .
+:participatesAsAgent rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000166> .
+:participatesAsInstrument rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000166> .
+:participatesAsPatient rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000166> .
+
+###  Inverse Properties
+:IsConnectorOf owl:inverseOf :hasConnector .
+
+###  Property Domains
+:hasConnector rdfs:domain <https://purl.industrialontologies.org/ontology/core/Core/Assembly> .
+
+###  Property Ranges
+:hasConnector rdfs:range <http://purl.obolibrary.org/obo/BFO_0000024> .
+

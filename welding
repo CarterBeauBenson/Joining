@@ -7,6 +7,7 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix bfo: <http://purl.obolibrary.org/obo/> .
 @prefix core: <https://www.industrialontologies.org/ontology/core/Core/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @base <http://www.semanticweb.org/welding> .
 
 <http://www.semanticweb.org/welding> rdf:type owl:Ontology ;
@@ -21,14 +22,18 @@ bfo:BFO_0000019 rdf:type owl:Class .
 bfo:BFO_0000024 rdf:type owl:Class .
 bfo:BFO_0000040 rdf:type owl:Class .
 <http://www.ontologyrepository.com/CommonCoreOntologies/Temperature> rdf:type owl:Class .
-:ArcWelding rdf:type owl:Class .
+:ArcWelding rdf:type owl:Class ;
+    skos:definition "Arc Welding is prescribed by an Arc Welding Specification."@en .
 :ArcWeldingInstrument rdf:type owl:Class .
-:ArcWeldingSpecification rdf:type owl:Class .
+:ArcWeldingSpecification rdf:type owl:Class ;
+    skos:definition "Arc Welding Specification entails a Deformating Action that includes Shielding Action, Heating Action in Arc Welding, Melting Action in Arc Welding, and Solidification of Base Metal Action."@en .
 :Bonding rdf:type owl:Class .
 :BrazedJoint rdf:type owl:Class .
-:Brazing rdf:type owl:Class .
+:Brazing rdf:type owl:Class ;
+    skos:definition "Brazing is a process that results in an assembly which necessarily includes a Brazed Joint as a connector and is prescribed by a Brazing Specification."@en .
 :BrazingNozzle rdf:type owl:Class .
-:BrazingSpecification rdf:type owl:Class .
+:BrazingSpecification rdf:type owl:Class ;
+    skos:definition "Brazing Specification includes Shielding Action, Heating Action in Brazing, Melting Action in Brazing, and Solidification of Filler Action."@en .
 :ColdWelding rdf:type owl:Class .
 :Combusting rdf:type owl:Class .
 :DeformatingAction rdf:type owl:Class .
@@ -45,18 +50,27 @@ bfo:BFO_0000040 rdf:type owl:Class .
 :FluxCoatedElectrode rdf:type owl:Class .
 :FluxedCoreArcWelding rdf:type owl:Class .
 :FrictionWelding rdf:type owl:Class .
-:GasBrazing rdf:type owl:Class .
-:GasBrazingSpecification rdf:type owl:Class .
+:GasBrazing rdf:type owl:Class ;
+    skos:definition "Gas Brazing is prescribed by a Gas Brazing Specification."@en .
+:GasBrazingSpecification rdf:type owl:Class ;
+    skos:definition "Gas Brazing Specification includes Shielding by Flux Action, Heating Action in Gas Brazing, Melting Action in Brazing, and Solidification of Filler Action."@en .
 :GasProducedByFlux rdf:type owl:Class .
 :GasWelding rdf:type owl:Class .
 :Heating rdf:type owl:Class .
-:HeatingActionInArcWelding rdf:type owl:Class .
-:HeatingActionInBrazing rdf:type owl:Class .
-:HeatingActionInGasBrazing rdf:type owl:Class .
-:HeatingActionInMIG rdf:type owl:Class .
-:HeatingActionInMMA rdf:type owl:Class .
-:HeatingActionInSoldering rdf:type owl:Class .
-:HeatingActionInTIG rdf:type owl:Class .
+:HeatingActionInArcWelding rdf:type owl:Class ;
+    skos:definition "Heating Action in Arc Welding prescribes a heating process that results in the melting and subsequent solidifying of the base metal."@en .
+:HeatingActionInBrazing rdf:type owl:Class ;
+    skos:definition "Heating Action in Brazing prescribes a heating process in brazing that results in the melting and subsequent solidifying of the filler."@en .
+:HeatingActionInGasBrazing rdf:type owl:Class ;
+    skos:definition "Heating Action in Gas Brazing prescribes a heating process in gas brazing that results in the melting and subsequent solidifying of the filler."@en .
+:HeatingActionInMIG rdf:type owl:Class ;
+    skos:definition "Heating Action in MIG prescribes a heating process in MIG welding that results in the melting and subsequent solidifying of the base metal."@en .
+:HeatingActionInMMA rdf:type owl:Class ;
+    skos:definition "Heating Action in MMA prescribes a heating process in MMA welding that results in the melting and subsequent solidifying of the base metal."@en .
+:HeatingActionInSoldering rdf:type owl:Class ;
+    skos:definition "Heating Action in Soldering prescribes a heating process in soldering."@en .
+:HeatingActionInTIG rdf:type owl:Class ;
+    skos:definition "Heating Action in TIG prescribes a heating process in TIG welding that results in the melting and subsequent solidifying of the base metal."@en .
 :HeatingInBrazing rdf:type owl:Class .
 :HeatingInGasBrazing rdf:type owl:Class .
 :HeatingInMIGWelding rdf:type owl:Class .
@@ -66,18 +80,27 @@ bfo:BFO_0000040 rdf:type owl:Class .
 :InertGas rdf:type owl:Class .
 :JoiningProcess rdf:type owl:Class .
 :Joint rdf:type owl:Class .
-:MIGWelding rdf:type owl:Class .
+:MIGWelding rdf:type owl:Class ;
+    skos:definition "MIG Welding is prescribed by a MIG Welding Specification."@en .
 :MIGWeldingInstrument rdf:type owl:Class .
-:MIGWeldingSpecification rdf:type owl:Class .
-:MMAWelding rdf:type owl:Class .
-:MMAWeldingSpecification rdf:type owl:Class .
+:MIGWeldingSpecification rdf:type owl:Class ;
+    skos:definition "MIG Welding Specification entails a Deformating Action that includes Shielding by Inert Gas Action, Heating Action in MIG, Melting Action in MIG, and Solidification of Base Metal Action."@en .
+:MMAWelding rdf:type owl:Class ;
+    skos:definition "MMA Welding is prescribed by a MMA Welding Specification."@en .
+:MMAWeldingSpecification rdf:type owl:Class ;
+    skos:definition "MMA Welding Specification entails a Deformating Action that includes Shielding by Flux Produced Gas and Slag Action, Heating Action in MMA, Melting Action in MMA, and Solidification of Base Metal Action."@en .
 :MMAWeldingUnit rdf:type owl:Class .
 :Melting rdf:type owl:Class .
-:MeltingActionInArcWelding rdf:type owl:Class .
-:MeltingActionInBrazing rdf:type owl:Class .
-:MeltingActionInMIG rdf:type owl:Class .
-:MeltingActionInMMA rdf:type owl:Class .
-:MeltingActionInTIG rdf:type owl:Class .
+:MeltingActionInArcWelding rdf:type owl:Class ;
+    skos:definition "Melting Action in Arc Welding prescribes a melting process that results in the solidifying of the base metal."@en .
+:MeltingActionInBrazing rdf:type owl:Class ;
+    skos:definition "Melting Action in Brazing prescribes a melting process that results in the solidifying of the filler."@en .
+:MeltingActionInMIG rdf:type owl:Class ;
+    skos:definition "Melting Action in MIG prescribes a melting process that results in the solidifying of the base metal."@en .
+:MeltingActionInMMA rdf:type owl:Class ;
+    skos:definition "Melting Action in MMA prescribes a melting process that results in the solidifying of the base metal."@en .
+:MeltingActionInTIG rdf:type owl:Class ;
+    skos:definition "Melting Action in TIG prescribes a melting process that results in the solidifying of the base metal."@en .
 :MeltingInBrazing rdf:type owl:Class .
 :MeltingInMIGWelding rdf:type owl:Class .
 :MeltingInMMAWelding rdf:type owl:Class .
@@ -89,16 +112,22 @@ bfo:BFO_0000040 rdf:type owl:Class .
 :SeamWelding rdf:type owl:Class .
 :Shielding rdf:type owl:Class .
 :ShieldingAction rdf:type owl:Class .
-:ShieldingByFlux rdf:type owl:Class .
-:ShieldingByFluxAction rdf:type owl:Class .
+:ShieldingByFlux rdf:type owl:Class ;
+    skos:definition "Shielding by Flux involves the participation of Flux as an agent."@en .
+:ShieldingByFluxAction rdf:type owl:Class ;
+    skos:definition "Shielding by Flux Action prescribes Shielding by Flux."@en .
 :ShieldingByFluxProducedGasAndSlag rdf:type owl:Class .
 :ShieldingByFluxProducedGasAndSlagAction rdf:type owl:Class .
-:ShieldingByInertGas rdf:type owl:Class .
-:ShieldingByInertGasAction rdf:type owl:Class .
+:ShieldingByInertGas rdf:type owl:Class ;
+    skos:definition "Shielding by Inert Gas involves Inert Gas as an agent for shielding."@en .
+:ShieldingByInertGasAction rdf:type owl:Class ;
+    skos:definition "Shielding by Inert Gas Action prescribes Shielding by Inert Gas."@en .
 :SlagProducedByFlux rdf:type owl:Class .
-:Soldering rdf:type owl:Class .
+:Soldering rdf:type owl:Class ;
+    skos:definition "Soldering is a process prescribed by a Soldering Specification."@en .
 :SolderingIron rdf:type owl:Class .
-:SolderingSpecification rdf:type owl:Class .
+:SolderingSpecification rdf:type owl:Class ;
+    skos:definition "Soldering Specification involves specific procedures and materials like solder to create a permanent bond between parts, typically electronic components."@en .
 :SolidStateWelding rdf:type owl:Class .
 :SolidWireElectrode rdf:type owl:Class .
 :SolidificationOfBaseMetalAction rdf:type owl:Class .
@@ -108,9 +137,11 @@ bfo:BFO_0000040 rdf:type owl:Class .
 :SolidifyingFiller rdf:type owl:Class .
 :SpotWelding rdf:type owl:Class .
 :SubmergedArcWelding rdf:type owl:Class .
-:TIGWelding rdf:type owl:Class .
+:TIGWelding rdf:type owl:Class ;
+    skos:definition "TIG Welding is prescribed by a TIG Welding Specification."@en .
 :TIGWeldingInstrument rdf:type owl:Class .
-:TIGWeldingSpecification rdf:type owl:Class .
+:TIGWeldingSpecification rdf:type owl:Class ;
+    skos:definition "TIG Welding Specification entails a Deformating Action that includes Shielding by Inert Gas Action, Heating Action in TIG, Melting Action in TIG, and Solidification of Base Metal Action."@en .
 :TemperatureGreaterThan450Celcius rdf:type owl:Class .
 :TemperatureLessThanEqual450Celcius rdf:type owl:Class .
 :ThermitWelding rdf:type owl:Class .
@@ -118,8 +149,10 @@ bfo:BFO_0000040 rdf:type owl:Class .
 :TungstenElectrode rdf:type owl:Class .
 :UltrasonicWelding rdf:type owl:Class .
 :WeldedAssembly rdf:type owl:Class .
-:WeldedJoint rdf:type owl:Class .
-:Welding rdf:type owl:Class .
+:WeldedJoint rdf:type owl:Class ;
+    skos:definition "A Welded Joint is created by welding methods, involving the melting of base metal or filler metal to form a strong bond between parts."@en .
+:Welding rdf:type owl:Class ;
+    skos:definition "Welding is a process that results in a welded assembly, typically involving the use of high heat to melt the joining materials along with a filler material, to create a strong, permanent bond."@en .
 :WeldingInstrument rdf:type owl:Class .
 :WeldingSpecification rdf:type owl:Class .
 core:ActionSpecification rdf:type owl:Class .
@@ -170,45 +203,9 @@ core:isInputOf rdf:type owl:ObjectProperty .
 core:isOutputOf rdf:type owl:ObjectProperty .
 core:prescribedBy rdf:type owl:ObjectProperty .
 core:prescribes rdf:type owl:ObjectProperty .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-
-:ArcWelding skos:definition "Arc Welding is prescribed by an Arc Welding Specification."@en .
-:ArcWeldingSpecification skos:definition "Arc Welding Specification entails a Deformating Action that includes Shielding Action, Heating Action in Arc Welding, Melting Action in Arc Welding, and Solidification of Base Metal Action."@en .
-:Brazing skos:definition "Brazing is a process that results in an assembly which necessarily includes a Brazed Joint as a connector and is prescribed by a Brazing Specification."@en .
-:BrazingSpecification skos:definition "Brazing Specification includes Shielding Action, Heating Action in Brazing, Melting Action in Brazing, and Solidification of Filler Action."@en .
-:GasBrazing skos:definition "Gas Brazing is prescribed by a Gas Brazing Specification."@en .
-:GasBrazingSpecification skos:definition "Gas Brazing Specification includes Shielding by Flux Action, Heating Action in Gas Brazing, Melting Action in Brazing, and Solidification of Filler Action."@en .
-:GasProducedByFlux skos:definition "Gas Produced by Flux is an output of melting processes involving Flux Coated Electrode."@en .
-:HeatingActionInArcWelding skos:definition "Heating Action in Arc Welding prescribes a heating process that results in the melting and subsequent solidifying of the base metal."@en .
-:HeatingActionInBrazing skos:definition "Heating Action in Brazing prescribes a heating process in brazing that results in the melting and subsequent solidifying of the filler."@en .
-:HeatingActionInGasBrazing skos:definition "Heating Action in Gas Brazing prescribes a heating process in gas brazing that results in the melting and subsequent solidifying of the filler."@en .
-:HeatingActionInMIG skos:definition "Heating Action in MIG prescribes a heating process in MIG welding that results in the melting and subsequent solidifying of the base metal."@en .
-:HeatingActionInMMA skos:definition "Heating Action in MMA prescribes a heating process in MMA welding that results in the melting and subsequent solidifying of the base metal."@en .
-:HeatingActionInSoldering skos:definition "Heating Action in Soldering prescribes a heating process in soldering."@en .
-:HeatingActionInTIG skos:definition "Heating Action in TIG prescribes a heating process in TIG welding that results in the melting and subsequent solidifying of the base metal."@en .
-:MIGWelding skos:definition "MIG Welding is prescribed by a MIG Welding Specification."@en .
-:MIGWeldingSpecification skos:definition "MIG Welding Specification entails a Deformating Action that includes Shielding by Inert Gas Action, Heating Action in MIG, Melting Action in MIG, and Solidification of Base Metal Action."@en .
-:MMAWelding skos:definition "MMA Welding is prescribed by a MMA Welding Specification."@en .
-:MMAWeldingSpecification skos:definition "MMA Welding Specification entails a Deformating Action that includes Shielding by Flux Produced Gas and Slag Action, Heating Action in MMA, Melting Action in MMA, and Solidification of Base Metal Action."@en .
-:MeltingActionInArcWelding skos:definition "Melting Action in Arc Welding prescribes a melting process that results in the solidifying of the base metal."@en .
-:MeltingActionInBrazing skos:definition "Melting Action in Brazing prescribes a melting process that results in the solidifying of the filler."@en .
-:MeltingActionInMIG skos:definition "Melting Action in MIG prescribes a melting process that results in the solidifying of the base metal."@en .
-:MeltingActionInMMA skos:definition "Melting Action in MMA prescribes a melting process that results in the solidifying of the base metal."@en .
-:MeltingActionInTIG skos:definition "Melting Action in TIG prescribes a melting process that results in the solidifying of the base metal."@en .
-:ShieldingByFlux skos:definition "Shielding by Flux involves the participation of Flux as an agent."@en .
-:ShieldingByFluxAction skos:definition "Shielding by Flux Action prescribes Shielding by Flux."@en .
-:ShieldingByInertGas skos:definition "Shielding by Inert Gas involves Inert Gas as an agent for shielding."@en .
-:ShieldingByInertGasAction skos:definition "Shielding by Inert Gas Action prescribes Shielding by Inert Gas."@en .
-:TIGWelding skos:definition "TIG Welding is prescribed by a TIG Welding Specification."@en .
-:TIGWeldingSpecification skos:definition "TIG Welding Specification entails a Deformating Action that includes Shielding by Inert Gas Action, Heating Action in TIG, Melting Action in TIG, and Solidification of Base Metal Action."@en .
-
-These definitions use clear, descriptive language to explain the roles and relationships of each class within the ontology, focusing on the effects and purposes of the actions specified by the axioms. This use of natural language enhances the accessibility and comprehensibility of the ontology for users who may not be familiar with the formal logical expressions used in the original OWL definitions.
-
 
 ###  Annotation Properties
 dc:creator rdf:type owl:AnnotationProperty .
 dc:title rdf:type owl:AnnotationProperty .
 core:meta/AnnotationVocabulary/firstOrderLogicDefinition rdf:type owl:AnnotationProperty .
 core:meta/AnnotationVocabulary/naturalLanguageDefinition rdf:type owl:AnnotationProperty .
-
-This Turtle script outlines the structure of the ontology, including class and property declarations, equivalent class definitions, and annotations for natural language descriptions. Each class, property, and annotation is clearly defined with appropriate RDF types and relationships, providing a structured and searchable knowledge base for the domain of welding processes.
